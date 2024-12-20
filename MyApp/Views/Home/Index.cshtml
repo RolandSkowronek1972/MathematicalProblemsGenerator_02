@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <div>
+        <div>
+            <h1 class="display-4">Welcome</h1>
+            <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+        </div>
+        <div>
+            <div data-component="HelloApi" data-props="{ value:'mvc' }"></div>
+        </div>
+    </div>
+
+    <div class="my-5">
+        <div class="d-flex justify-content-evenly">
+            <div data-component="pages/Home/GettingStarted.mjs" data-props="{ template:'mvc' }"></div>
+        </div>
+    </div>
+</div>
