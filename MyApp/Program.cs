@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using MyApp.Areas.Identity.Pages.Account;
 using MyApp.ServiceInterface;
 
@@ -9,7 +10,7 @@ var services = builder.Services;
 var config = builder.Configuration;
 services.AddMvc();
 services.AddControllersWithViews();
-
+services.AddRouting();
 services.Configure<CookiePolicyOptions>(options =>
 {
     // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -90,10 +91,19 @@ else
 app.UseStaticFiles();
 app.UseCookiePolicy();
 app.UseAuthentication();
-
+/*
+app.MapControllerRoute(
+    name: "LinearEquations",
+   
+    pattern: "LinearEquations/{controller=Home}/{action=Index}/{id?}");
+*/
+//LinearEquations001.aspx
+app.MapControllerRoute("SquareEquations", "SquareEquations", new { controller = "SquareEquations01", action = "Index" });
 app.MapControllerRoute(
     name: "default",
+    
     pattern: "{controller=Home}/{action=Index}/{id?}");
+//app.MapControllerRoute("SquareEquations", "SquareEquations", new { controller = "SquareEquations01", action = "Index" });
 app.MapRazorPages();
 
 app.UseServiceStack(new AppHost(), options => {

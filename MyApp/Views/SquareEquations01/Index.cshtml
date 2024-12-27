@@ -1,0 +1,167 @@
+﻿
+@model MathematicalProblemsGenerator.Areas.SquareEquations.Models.SquareEquations01M
+
+<h1>@Model.Title</h1>
+
+
+<div style="display: flex; justify-content: space-between;">
+    <div>
+        <br />
+        <h3>
+
+            y= @Model.wspA  x<sup>2</sup>@Model.znak1TXT @Model.wspB @Model.znak2TXT @Model.wspC
+
+        </h3>
+
+    </div>
+    <br />
+    <div style="margin-right: 0;">
+        <asp:LinkButton class="btn btn-1 btn-sep icon-refrech" ID="LinkButton54" runat="server" OnClick="LinkButton54_Click">  Odśwież</asp:LinkButton>
+
+    </div>
+    <div style="margin-right: 0;">
+        <label class="btn btn-1 btn-sep icon-show" for="expend">Pokaż wynik</label>
+
+    </div>
+</div>
+<label for="expend"></label>
+
+<div class="service-1 click1">
+    <div class="row">
+        <input type="checkbox" id="expend" />
+        <div class="medium-12 small-12 columns smalldesc">
+            <h4>@Model.Info1</h4>
+            <h2>@Model.Info2</h2>
+            
+            <ul>
+                <li>
+                    A: @Model.wspA
+                </li>
+                <li>
+                    B: @Model.wspB
+                </li>
+                <li>
+                    C: @Model.wspC
+                </li>
+
+            </ul>
+
+          
+            <br />
+            <table>
+                <tbody>
+                    <tr>
+                        <td rowspan="3" align="center" valign="center">
+                            <asp:Label ID="Wynik1Poczatek" runat="server"></asp:Label>
+                        </td>
+                        <td class="centerd" align="center" valign="center">
+                            <asp:Label ID="Wynik1UlamekGora1" runat="server"></asp:Label>
+                        </td>
+                        <td rowspan="3" align="center" valign="center">
+                            <asp:Label ID="Wynik1UlamekruwnaSie1" runat="server"></asp:Label>
+                        </td>
+                        <td class="centerd" align="center" valign="center">
+                            <asp:Label ID="Wynik1UlamekGora2" runat="server"></asp:Label>
+                        </td>
+                        <td rowspan="3" align="center" valign="center">
+                            <asp:Label ID="Wynik1UlamekruwnaSie2" runat="server"></asp:Label>
+                        </td>
+
+                        <td rowspan="3" align="center" valign="center">
+                            <asp:Label ID="Wynik1" runat="server"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td class="centerd" align="center" valign="center">
+                            <asp:Label ID="Wynik1UlamekSrodek1" runat="server"></asp:Label>
+                        </td>
+
+                        <td class="centerd" align="center" valign="center">
+                            <asp:Label ID="Wynik1UlamekSrodek2" runat="server"></asp:Label>
+                        </td>
+
+
+                    </tr>
+                    <tr>
+
+                        <td class="centerd" align="center" valign="center">
+                            <asp:Label ID="Wynik1UlamekDol1" runat="server"></asp:Label>
+                        </td>
+
+                        <td class="centerd" align="center" valign="center">
+                            <asp:Label ID="Wynik1UlamekDol2" runat="server"></asp:Label>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <br />
+            <table>
+                <tbody>
+                    <tr>
+                        <td rowspan="3" align="center" valign="center">
+                            <asp:Label ID="Wynik1Poczatek2" runat="server"></asp:Label>
+                        </td>
+                        <td class="centerd" align="center" valign="center">
+                            <asp:Label ID="Wynik2UlamekGora1" runat="server"></asp:Label>
+                        </td>
+                        <td rowspan="3" align="center" valign="center">
+                            <asp:Label ID="Wynik2UlamekruwnaSie1" runat="server"></asp:Label>
+                        </td>
+                        <td class="centerd" align="center" valign="center">
+                            <asp:Label ID="Wynik2UlamekGora2" runat="server"></asp:Label>
+                        </td>
+                        <td rowspan="3" align="center" valign="center">
+                            <asp:Label ID="Wynik2UlamekruwnaSie2" runat="server"></asp:Label>
+                        </td>
+                        <td class="centerd" align="center" valign="center">
+                            <asp:Label ID="Wynik2UlamekGora3" runat="server"></asp:Label>
+                        </td>
+                        <td rowspan="3" align="center" valign="center">
+                            <asp:Label ID="Wynik2UlamekruwnaSie3" runat="server"></asp:Label>
+                        </td>
+                        <td rowspan="3" align="center" valign="center">
+                            <asp:Label ID="Wynik2" runat="server"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td class="centerd" align="center" valign="center">
+                            <asp:Label ID="Wynik2UlamekSrodek1" runat="server"></asp:Label>
+                        </td>
+
+                        <td class="centerd" align="center" valign="center">
+                            <asp:Label ID="Wynik2UlamekSrodek2" runat="server"></asp:Label>
+                        </td>
+                        <td class="centerd" align="center" valign="center">
+                            <asp:Label ID="Wynik2UlamekSrodek3" runat="server"></asp:Label>
+                        </td>
+
+                    </tr>
+                    <tr>
+
+                        <td class="centerd" align="center" valign="center">
+                            <asp:Label ID="Wynik2UlamekDol1" runat="server"></asp:Label>
+                        </td>
+                        <td class="centerd" align="center" valign="center">
+                            <asp:Label ID="Wynik2UlamekDol2" runat="server"></asp:Label>
+                        </td>
+                        <td class="centerd" align="center" valign="center">
+                            <asp:Label ID="Wynik2UlamekDol3" runat="server"></asp:Label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                <asp:Label ID="Odp01" runat="server"></asp:Label>
+            </p>
+            <p>
+                <asp:Label ID="Odp02" runat="server"></asp:Label>
+            </p>
+        </div>
+
+    </div>
+</div>
+

@@ -52,4 +52,12 @@
         <ProjectReference Include="..\MyApp.ServiceModel\MyApp.ServiceModel.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Areas\SquareEquations\Data\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="wwwroot\logo.jpg" />
+    </ItemGroup>
+
 </Project>
