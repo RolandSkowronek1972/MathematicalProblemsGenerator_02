@@ -1,22 +1,43 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer Localizator
+@{
+    ViewData["Title"] =  "Mathematical Problems Generator";
 }
 
 <div class="text-center">
     <div>
         <div>
            
-            <h1 class="display-4">Welcome</h1>
-            <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+            <h1 class="display-4">@Localizator["Witajcie"] </h1>
+            <div style="row">
+
+                <div class="medium-12 small-12 columns smalldesc" style="background-color:lightgray; display:flex">
+
+                    <br />
+                    <div class="col-10">
+                        <p>
+                            Ten serwis powstał z myślą o uczniach szkół średnich i ich rodzicach, którzy poszukują zadań matematycznych z różnych działów przerabianych na lekcjach, a szkolne podręczniki czy zeszyty ćwiczeń nie dostarczają wystarczającej ilości zadań.
+                        </p>
+                        <p>
+                            Zadania które pojawiają się na stronach tego serwisu, są generowane na bierząco a wszystki wsłczynniki liczbowe są generowane w zakresie od -30 do 30.
+                            Tak więc trudno będzie trafić na identyczne zadania, ale nie jest to przy odrobinie szczęścia mozliwe.
+                            Mocną stroną tego serwisu jest fakt, ze każde zadanie ma od razu rozwiązanie, gdzie uczeń może sprawdzić swoje obliczenia.
+                            Rozwiązania są przedstawione w postaci kolejnych kroków tak, aby uczeń mógł prześledzić sposób  prowadzenia obliczen i znależć swój ewentualny błąd.
+
+                        </p>
+                            </div>
+                    <div class="col-2">
+                    </div>
+                    <p>reklama</p>
+
+                    </div>
+
+            </div>
+           
         </div>
-        <div>
-            <div data-component="HelloApi" data-props="{ value:'mvc' }"></div>
-        </div>
+      
     </div>
 
-    <div class="my-5">
-        <div class="d-flex justify-content-evenly">
-            <div data-component="pages/Home/GettingStarted.mjs" data-props="{ template:'mvc' }"></div>
-        </div>
-    </div>
+   
 </div>

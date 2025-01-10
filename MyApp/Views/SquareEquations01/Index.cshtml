@@ -1,4 +1,5 @@
 ﻿
+
 @model MathematicalProblemsGenerator.Areas.SquareEquations.Models.SquareEquations01M
 
 <h1>@Model.Title</h1>
@@ -7,161 +8,365 @@
 <div style="display: flex; justify-content: space-between;">
     <div>
         <br />
-        <h3>
+        <h2>
 
-            y= @Model.wspA  x<sup>2</sup>@Model.znak1TXT @Model.wspB @Model.znak2TXT @Model.wspC
+            <span style="font-family:Calibri; font-weight: bold;">
 
-        </h3>
+             y= @Model.wspA  x<sup>2</sup>@Model.znak1TXT @Model.wspBX @Model.znak2TXT @Model.wspC<br />
+            </span>
+        </h2>
 
     </div>
     <br />
     <div style="margin-right: 0;">
-        <asp:LinkButton class="btn btn-1 btn-sep icon-refrech" ID="LinkButton54" runat="server" OnClick="LinkButton54_Click">  Odśwież</asp:LinkButton>
-
+        <a class="btn btn-1 btn-sep icon-refresh" asp-area="SquareEquations" asp-controller="SquareEquations01" asp-action="Index">Nowe zadanie</a>
     </div>
     <div style="margin-right: 0;">
         <label class="btn btn-1 btn-sep icon-show" for="expend">Pokaż wynik</label>
 
     </div>
+    <div style="margin-right: 0; height:30%; background-color:blue">
+        <p>sdasdsads</p>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6759106752232032"
+                crossorigin="anonymous"></script>
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-6759106752232032"
+             data-ad-slot="7604653734"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
 </div>
-<label for="expend"></label>
 
-<div class="service-1 click1">
+
+<div class="service-1 click1 container">
     <div class="row">
         <input type="checkbox" id="expend" />
-        <div class="medium-12 small-12 columns smalldesc">
-            <h4>@Model.Info1</h4>
-            <h2>@Model.Info2</h2>
-            
-            <ul>
-                <li>
-                    A: @Model.wspA
-                </li>
-                <li>
-                    B: @Model.wspB
-                </li>
-                <li>
-                    C: @Model.wspC
-                </li>
 
-            </ul>
+        <div class="medium-12 small-12 columns smalldesc" style="background-color:lightgray; display:flex">
 
-          
             <br />
-            <table>
-                <tbody>
-                    <tr>
-                        <td rowspan="3" align="center" valign="center">
-                            <asp:Label ID="Wynik1Poczatek" runat="server"></asp:Label>
-                        </td>
-                        <td class="centerd" align="center" valign="center">
-                            <asp:Label ID="Wynik1UlamekGora1" runat="server"></asp:Label>
-                        </td>
-                        <td rowspan="3" align="center" valign="center">
-                            <asp:Label ID="Wynik1UlamekruwnaSie1" runat="server"></asp:Label>
-                        </td>
-                        <td class="centerd" align="center" valign="center">
-                            <asp:Label ID="Wynik1UlamekGora2" runat="server"></asp:Label>
-                        </td>
-                        <td rowspan="3" align="center" valign="center">
-                            <asp:Label ID="Wynik1UlamekruwnaSie2" runat="server"></asp:Label>
-                        </td>
+            <div class="col-5">
+                <h4><b>@Model.Info1</b></h4>
+                <br />
+                <h6>@Model.Info2</h6>
 
-                        <td rowspan="3" align="center" valign="center">
-                            <asp:Label ID="Wynik1" runat="server"></asp:Label>
-                        </td>
-                    </tr>
-                    <tr>
+                <ul>
+                    <li>
+                        <b>a: </b> @Model.wspA
+                    </li>
+                    <li>
+                        <b>b: </b> @Model.wspB
+                    </li>
+                    <li>
+                        <b>c: </b> @Model.wspC
+                    </li>
 
-                        <td class="centerd" align="center" valign="center">
-                            <asp:Label ID="Wynik1UlamekSrodek1" runat="server"></asp:Label>
-                        </td>
+                </ul>
+                <p><b>@Model.Info3</b></p>
+                <p>    Δ= b<sup>2</sup> - 4ac = @Model.wspBInDelta - 4 * @Model.wspAInDelta * @Model.wspCInDelta  = @Model.deltaLiczbowo</p>
 
-                        <td class="centerd" align="center" valign="center">
-                            <asp:Label ID="Wynik1UlamekSrodek2" runat="server"></asp:Label>
-                        </td>
+                <br />
+                <p>@Model.Info4</p>
+                @if (@Model.deltaPlus == true)
+                {
+
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td rowspan="3">
+                                </td>
+
+                                <td style="text-align: center;">
+                                </td>
+
+                                <td style="text-align: center;">
+                                    (-b - √Δ)
+                                </td>
+
+                                <td>
+                                </td>
+
+                                <td style="text-align: center;">
+                                    ( @Model.wspB - √@Model.deltaLiczbowo )
+                                </td>
+                                <td rowspan="3">
+                                </td>
+
+                                <td>
+                                </td>
+                                <td style="text-align: center;">
+                                    @Model.Eq01wynikGora1
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td style="text-align: center;">
+                                    x<sub>1</sub> =
+                                </td>
+                                <td style="text-align: center;">
+                                    ⎯⎯⎯⎯⎯⎯⎯⎯⎯
+                                </td>
+
+                                <td style="text-align: center;">
+                                    =
+                                </td>
+                                <td style="text-align: center;">
+                                    ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+                                </td>
 
 
-                    </tr>
-                    <tr>
+                                <td style="text-align: center;">
+                                    ≈ 
+                                </td>
 
-                        <td class="centerd" align="center" valign="center">
-                            <asp:Label ID="Wynik1UlamekDol1" runat="server"></asp:Label>
-                        </td>
+                                <td style="text-align: center;">
+                                    ⎯⎯⎯⎯⎯⎯⎯⎯⎯
+                                </td>
 
-                        <td class="centerd" align="center" valign="center">
-                            <asp:Label ID="Wynik1UlamekDol2" runat="server"></asp:Label>
-                        </td>
 
-                    </tr>
-                </tbody>
-            </table>
-            <br />
-            <br />
-            <table>
-                <tbody>
-                    <tr>
-                        <td rowspan="3" align="center" valign="center">
-                            <asp:Label ID="Wynik1Poczatek2" runat="server"></asp:Label>
-                        </td>
-                        <td class="centerd" align="center" valign="center">
-                            <asp:Label ID="Wynik2UlamekGora1" runat="server"></asp:Label>
-                        </td>
-                        <td rowspan="3" align="center" valign="center">
-                            <asp:Label ID="Wynik2UlamekruwnaSie1" runat="server"></asp:Label>
-                        </td>
-                        <td class="centerd" align="center" valign="center">
-                            <asp:Label ID="Wynik2UlamekGora2" runat="server"></asp:Label>
-                        </td>
-                        <td rowspan="3" align="center" valign="center">
-                            <asp:Label ID="Wynik2UlamekruwnaSie2" runat="server"></asp:Label>
-                        </td>
-                        <td class="centerd" align="center" valign="center">
-                            <asp:Label ID="Wynik2UlamekGora3" runat="server"></asp:Label>
-                        </td>
-                        <td rowspan="3" align="center" valign="center">
-                            <asp:Label ID="Wynik2UlamekruwnaSie3" runat="server"></asp:Label>
-                        </td>
-                        <td rowspan="3" align="center" valign="center">
-                            <asp:Label ID="Wynik2" runat="server"></asp:Label>
-                        </td>
-                    </tr>
-                    <tr>
+                                <td style="text-align: center;">
+                                    ≈ @Model.Eq01wynik1
+                                </td>
+                            </tr>
+                            <tr>
 
-                        <td class="centerd" align="center" valign="center">
-                            <asp:Label ID="Wynik2UlamekSrodek1" runat="server"></asp:Label>
-                        </td>
+                                <td >
+                                </td>
 
-                        <td class="centerd" align="center" valign="center">
-                            <asp:Label ID="Wynik2UlamekSrodek2" runat="server"></asp:Label>
-                        </td>
-                        <td class="centerd" align="center" valign="center">
-                            <asp:Label ID="Wynik2UlamekSrodek3" runat="server"></asp:Label>
-                        </td>
+                                <td style="text-align: center;">
+                                    2 * a
+                                </td>
+                                <td rowspan="3">
+                                </td>
+                                <td style="text-align: center;">
+                                    2 * @Model.wspA
+                                </td>
+                                <td rowspan="3">
+                                </td>
 
-                    </tr>
-                    <tr>
 
-                        <td class="centerd" align="center" valign="center">
-                            <asp:Label ID="Wynik2UlamekDol1" runat="server"></asp:Label>
-                        </td>
-                        <td class="centerd" align="center" valign="center">
-                            <asp:Label ID="Wynik2UlamekDol2" runat="server"></asp:Label>
-                        </td>
-                        <td class="centerd" align="center" valign="center">
-                            <asp:Label ID="Wynik2UlamekDol3" runat="server"></asp:Label>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <p>
-                <asp:Label ID="Odp01" runat="server"></asp:Label>
-            </p>
-            <p>
-                <asp:Label ID="Odp02" runat="server"></asp:Label>
-            </p>
+                                <td style="text-align: center;">
+                                    @Model.Eq01wynikDol1
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td rowspan="3">
+                                </td>
+
+                                <td style="text-align: center;">
+                                </td>
+
+                                <td style="text-align: center;">
+                                    (-b + √Δ)
+                                </td>
+
+                                <td>
+                                </td>
+
+                                <td style="text-align: center;">
+                                    ( @Model.wspB + √@Model.deltaLiczbowo )
+                                </td>
+                                <td rowspan="3">
+                                </td>
+
+                                <td>
+                                </td>
+                                <td style="text-align: center;">
+                                    @Model.Eq01wynikGora2
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td style="text-align: center;">
+                                    x<sub>2</sub> =
+                                </td>
+                                <td style="text-align: center;">
+                                    ⎯⎯⎯⎯⎯⎯⎯⎯⎯
+                                </td>
+
+                                <td style="text-align: center;">
+                                    =
+                                </td>
+                                <td style="text-align: center;">
+                                    ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+                                </td>
+
+
+                                <td style="text-align: center;">
+                                    ≈
+                                </td>
+
+                                <td style="text-align: center;">
+                                    ⎯⎯⎯⎯⎯⎯⎯⎯⎯
+                                </td>
+
+
+                                <td style="text-align: center;">
+                                    ≈ @Model.Eq01wynik2
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td>
+                                </td>
+
+                                <td style="text-align: center;">
+                                    2 * a
+                                </td>
+                                <td rowspan="3">
+                                </td>
+                                <td style="text-align: center;">
+                                    2 * @Model.wspA
+                                </td>
+                                <td rowspan="3">
+                                </td>
+
+
+                                <td style="text-align: center;">
+                                    @Model.Eq01wynikDol1
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                }
+
+                @if (@Model.deltaPlus == true)
+                {
+
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td rowspan="3">
+                                </td>
+
+                                <td style="text-align: center;">
+                                </td>
+
+                                <td style="text-align: center;">
+                                    (-b )
+                                </td>
+
+                                <td>
+                                </td>
+
+                                <td style="text-align: center;">
+                                    ( @Model.wspB  )
+                                </td>
+                                <td rowspan="3">
+                                </td>
+
+                                <td>
+                                </td>
+                                <td style="text-align: center;">
+                                    @Model.Eq01wynikGora1
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td style="text-align: center;">
+                                    x<sub>1</sub> =
+                                </td>
+                                <td style="text-align: center;">
+                                    ⎯⎯⎯⎯⎯⎯⎯⎯⎯
+                                </td>
+
+                                <td style="text-align: center;">
+                                    =
+                                </td>
+                                <td style="text-align: center;">
+                                    ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+                                </td>
+
+
+                                <td style="text-align: center;">
+                                    ≈
+                                </td>
+
+                                <td style="text-align: center;">
+                                    ⎯⎯⎯⎯⎯⎯⎯⎯⎯
+                                </td>
+
+
+                                <td style="text-align: center;">
+                                    ≈ @Model.Eq01wynik1
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td>
+                                </td>
+
+                                <td style="text-align: center;">
+                                    2 * a
+                                </td>
+                                <td rowspan="3">
+                                </td>
+                                <td style="text-align: center;">
+                                    2 * @Model.wspA
+                                </td>
+                                <td rowspan="3">
+                                </td>
+
+
+                                <td style="text-align: center;">
+                                    @Model.Eq01wynikDol1
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                   
+                }
+
+
+
+                <br />
+                <br />
+
+               
+                <p>@Model.Info6</p>
+               
+                
+
+
+            </div>
+            <div class="col-5" style="display:flow">
+                <h4><b>@Model.Info7</b></h4>
+                
+                <img src="\images\@Model.imageToView" alt="Wykres" />
+                
+            </div>
+            <div class="col-2" style="background-color:aquamarine">
+                <p>aaa</p>
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6759106752232032"
+                        crossorigin="anonymous"></script>
+                <ins class="adsbygoogle"
+                     style="display:block; text-align:center;"
+                     data-ad-layout="in-article"
+                     data-ad-format="fluid"
+                     data-ad-client="ca-pub-6759106752232032"
+                     data-ad-slot="7604653734"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
         </div>
-
+        
     </div>
 </div>
 

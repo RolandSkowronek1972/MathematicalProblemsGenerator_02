@@ -16,6 +16,11 @@ namespace MathematicalProblemsGenerator.Areas.SquareEquations.Models
         public string Info3 { get; set; } = string.Empty;
         public string Info4 { get; set; } = string.Empty;
         public string znakTXT { get; set; } = string.Empty;
+
+        public bool deltaPlus {  get; set; } = false;
+        public bool deltaMinus { get; set; } = false;
+        public bool deltaZerro { get; set; } = false;
+
         public string Eq01 { get; set; } = string.Empty;
         public string Eq02 { get; set; } = string.Empty;
         public string Obl_1_1 { get; set; } = string.Empty;
