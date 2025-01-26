@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Reflection.Emit;
 using MathematicalProblemsGenerator.Areas.SquareEquations.Models;
+
+
 using Microsoft.EntityFrameworkCore.Sqlite.Query.Internal;
 using System.Web.Helpers;
 using Microsoft.AspNetCore.Mvc.Localization;
@@ -9,13 +11,16 @@ using System;
 using System.Drawing;
 using System.IO;
 
-namespace MyApp.Areas.SquareEquations.Controllers
+namespace MathematicalProblemsGenerator.Areas.SquareEquations.Controllers
 {
     public class SquareEquations01 : Controller
     {
-        private readonly ILogger<SquareEquations01> _logger;
+        
+            
+            
+            private readonly ILogger<SquareEquations01> _logger;
         private readonly IStringLocalizer<SquareEquations01> _localizer;
-
+        CommonParts commonParts = new CommonParts();
         public SquareEquations01(ILogger<SquareEquations01> logger, IStringLocalizer<SquareEquations01> localizer)
         {
             _logger = logger;
@@ -64,7 +69,7 @@ namespace MyApp.Areas.SquareEquations.Controllers
 
                 }
                 IFormFile ufile;
-           //     MemoryStream ms = new MemoryStream();
+         
 
                 Guid guid = Guid.NewGuid();
 
@@ -85,7 +90,8 @@ namespace MyApp.Areas.SquareEquations.Controllers
             int wspC = 0;
             do
             {
-                wspolczynniki = GenerujWspolczynniki();
+
+                wspolczynniki  = commonParts.GenerujWspolczynniki();
                 wspA = wspolczynniki[0];
                 wspB = wspolczynniki[1];
                 wspC = wspolczynniki[2];
@@ -318,7 +324,7 @@ namespace MyApp.Areas.SquareEquations.Controllers
 
             return View(squareEquations01M);
         }
-
+        /*
         private List<int> GenerujWspolczynniki()
         {
             Random random = new Random();
@@ -331,7 +337,7 @@ namespace MyApp.Areas.SquareEquations.Controllers
             wspC = random.Next(-30, 30);
             return new List<int> { wspA, wspB, wspC };
         }
-
+        */
     }
     public class doWykresu()
     { 

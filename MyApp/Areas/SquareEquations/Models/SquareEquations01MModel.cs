@@ -1,10 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Drawing;
-using System.Web.Helpers;
-
-namespace MathematicalProblemsGenerator.Areas.SquareEquations.Models
+﻿namespace MathematicalProblemsGenerator.Areas.SquareEquations.Models
 {
-
     public class SquareEquations01M
     {
         public string wspA { get; set; } = string.Empty;
@@ -27,11 +22,10 @@ namespace MathematicalProblemsGenerator.Areas.SquareEquations.Models
         public string wspBInDelta { get; internal set; } = string.Empty;
         public string wspCInDelta { get; internal set; } = string.Empty;
 
-        public  string deltaLiczbowo { get; internal set; } = string.Empty;
+        public string deltaLiczbowo { get; internal set; } = string.Empty;
 
         public string znak1TXT { get; set; } = string.Empty;
         public string znak2TXT { get; set; } = string.Empty;
-        
         public string Eq01 { get; set; } = string.Empty;
         public string Eq01WzorGora { get; set; } = string.Empty;
         public string Eq01Wzorsrodek { get; set; } = string.Empty;
@@ -40,8 +34,6 @@ namespace MathematicalProblemsGenerator.Areas.SquareEquations.Models
         public string Eq01wynikGora1 { get; set; } = string.Empty;
         public string Eq01wynikGora2 { get; set; } = string.Empty;
         public string Eq01wynikDol1 { get; set; } = string.Empty;
-
-
 
         public string Eq02 { get; set; } = string.Empty;
         public string Obl_1_1 { get; set; } = string.Empty;
@@ -54,9 +46,6 @@ namespace MathematicalProblemsGenerator.Areas.SquareEquations.Models
         public bool deltaMinus { get; internal set; }
 
         public string Eq01wynik1 { get; internal set; }
-
-
-
 
         public string imageToView { get; set; } = String.Empty;
         public string wspBX { get; internal set; }
